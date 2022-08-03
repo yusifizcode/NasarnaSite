@@ -1,0 +1,354 @@
+$primary-color: #f7c33f;
+
+*{
+	box-sizing: border-box;
+}
+
+body{
+	font-family: "Open Sans", sans-serif;
+	margin: 0;
+}
+
+
+@keyframes foldCubeAngle {
+
+    0%,
+    10% {
+        transform: perspective(140px) rotateX(-180deg);
+        opacity: 0;
+    }
+
+    25%,
+    75% {
+        transform: perspective(140px) rotateX(0deg);
+        opacity: 1;
+    }
+
+    90%,
+    100% {
+        transform: perspective(140px) rotateY(180deg);
+        opacity: 0;
+    }
+}
+
+
+// Start Preloader
+
+.preloader {
+	background-color: #fff;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	z-index: 1000;
+	.folding-cube {
+		margin: 20px auto;
+		width: 60px;
+		height: 60px;
+		position: absolute;
+		left: calc(50% - 30px);
+		top: calc(50% - 50px);
+		transform: rotateZ(45deg);
+		.load-cube {
+			float: left;
+			width: 50%;
+			height: 50%;
+			position: relative;
+			transform: scale(1.1);
+			&:before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-color: $primary-color;
+				animation: foldCubeAngle 2.4s infinite linear both;
+				transform-origin: 100% 100%;
+			}
+		}
+		.cube2 {
+			transform: scale(1.1) rotateZ(90deg);
+			&:before {
+				animation-delay: 0.3s;
+			}
+		}
+		.cube3 {
+			transform: scale(1.1) rotateZ(180deg);
+			&:before {
+				animation-delay: 0.6s;
+			}
+		}
+		.cube4 {
+			transform: scale(1.1) rotateZ(270deg);
+			&:before {
+				animation-delay: 0.9s;
+			}
+		}
+	}
+}
+
+
+// Start Navigation Bar
+
+.navbar{
+	padding-top: 0 !important;
+	.navbar-toggler{
+		border: none !important;
+		background-color: $primary-color;
+
+		&:focus{
+			box-shadow: none !important;
+		}
+	}
+
+	.nav-item{
+		.nav-link{
+			color: #666;
+			padding: 40px 15px;
+		}
+
+		&:hover{
+			.nav-link{
+				color: $primary-color !important;
+			}
+		}
+	}
+
+	.side-bar{
+		// display: none;
+		.close-btn{
+			left: -20px;
+			top: 20px;
+			background-color: #fff;
+			border-radius: 50%;
+		}
+		transition: all 0.5s;
+		width: 278px;
+		height: 100vh;
+		border: 1px solid lightgray;
+		right: -300px;
+		top: 0;
+		background-color: white;
+		.small-nav{
+			display: flex;
+			flex-direction: column;
+			list-style: none;
+			padding: 0 ;
+			.small-nav-item{
+				padding: 10px 20px;
+				border-bottom: 1px solid lightgray;
+				.small-nav-link{
+					color: #666 !important;
+					text-decoration: none;
+					font-weight: 600;
+					color: black;
+				}
+			}
+		}
+	}
+
+	.show{
+		right: 0;
+	}
+
+	.header-search-form-wrapper{
+		.fi::before{
+			font-size: 1rem !important;
+			margin-left: 0 !important;
+		}
+		position: relative;
+		padding-top: 5px;
+
+		.search-toggle-btn{
+			background: transparent;
+			padding: 0;
+			border: 0;
+			outline: 0;
+		}
+		
+		.header-search-form{
+			position: absolute;
+			width: 250px;
+			right: -25px;
+			top: 75px;
+			opacity: 0;
+			visibility: hidden;
+			transition: all 0.5s;
+			box-shadow: 0px 15px 60px -19px black;
+			color: #666;
+
+			input{
+				border: none !important;
+				outline: none !important;
+				padding: 15px 20px;
+				font-size: 14px;
+			}
+
+			input:focus{
+				outline: none !important;
+				border: none !important;
+				box-shadow: none !important;
+			}
+			button{
+				padding: 15px;
+			}
+		}
+
+		.header-search-content-toggle{
+			opacity: 1;
+			visibility: visible;
+			right: 0;
+		}
+	}
+}
+
+@media (max-width: 450px) {
+     .header-search-form-wrapper {
+        display: none;
+    }
+}
+
+// Start Hero
+
+.section-padding{
+	padding: 120px 0px;
+}
+
+#hero{
+	padding-top: 150px;
+	.site-title{
+		h2{
+			color: #062265;
+			font-size: 60px;
+			margin: 0 0 0.45em 0.45em;
+			font-weight: 500;
+			line-height: 1.1;
+			font-family: "Rubik",sans-serif;
+			span{
+				color: $primary-color;
+				font-size: 60px;
+				font-weight: 500;
+				line-height: 1.1;
+			}
+		}
+
+	}
+
+	.site-subtitle{
+		p{
+			color: #666;
+			margin-bottom: 10px;
+			margin-left: 30px;
+			line-height: 1.6em;
+			font-size: 16px;
+			font-weight: 400;
+			font-family: "Rubik",sans-serif;
+		}
+	}
+
+
+	.site-img{
+		img{
+			max-width: 100%;
+		}
+	}
+}
+
+.site-btns{
+	margin: 30px 0 0 0;
+	a{
+		padding: 13px 38px;
+		color: #062265;
+		font-weight: 600;
+		transition: all 0.4s;
+		font-family: "Rubik",sans-serif;
+		&:hover{
+			color: white;
+		}
+
+		&:nth-child(2){
+			&:hover{
+				background-color: $primary-color;
+				border: 1px solid $primary-color !important;
+			}
+		}
+	}
+}
+
+// Start Mission
+
+.section-title{
+	position: relative;
+	max-width: 500px;
+	margin: auto;
+	margin-bottom: 70px;
+
+	span{
+		font-size: 18px;
+		font-weight: 400;
+		color: $primary-color;
+		display: block;
+		margin-bottom: 10px;
+		font-family: "Rubik",sans-serif;
+	}
+
+	h2{
+		font-size: 36px;
+		font-weight: 700;
+		margin: 0;
+		display: inline-block;
+		position: relative;
+		line-height: 50px;
+		font-family: "Rubik",sans-serif;
+		color: #062265;
+	}
+}
+
+#mission{
+	background: #fcfcfc;
+
+	.mission-card{
+		.mission-img{
+			img{
+				max-width: 1005;
+			}
+		}
+
+		.mission-content{
+			h2{
+				margin-top: 30px;
+				font-size: 22px;
+				font-weight: 500;
+				margin-bottom: 20px;
+				font-family: "Rubik",sans-serif;
+				color: #062265;
+			}
+
+			p{
+				max-width: 250px;
+				margin: auto;
+				color: #777;
+				line-height: 1.6em;
+				font-size: 16px;
+				font-weight: 400;
+			}
+		}
+	}
+}
+
+
+// Start About
+
+#about{
+	.about-img{
+		img{
+			max-width: 100%;
+		}
+	}
+
+	.about-content{
+		p{
+			color: #777;
+		}
+	}
+}
