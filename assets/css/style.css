@@ -1560,10 +1560,9 @@ body {
   margin-bottom: 15px;
 }
 
-.form-group input {
+.form-group input, .form-group textarea {
   background: transparent;
   width: 100%;
-  height: 50px;
   border: 1px solid #ebebeb;
   padding-left: 15px;
   border-radius: 0;
@@ -1571,6 +1570,10 @@ body {
           box-shadow: none !important;
   color: #525252;
   border-radius: 5px;
+}
+
+.form-group input {
+  height: 50px;
 }
 
 .case-content .case-text-top {
@@ -1701,16 +1704,6 @@ body {
   padding: 30px;
 }
 
-#event-single .event-single .event-details-wrap .event-detail-content #Map .contact-map {
-  -webkit-filter: grayscale(100%);
-          filter: grayscale(100%);
-}
-
-#event-single .event-single .event-details-wrap .event-detail-content #Map .contact-map iframe {
-  width: 100%;
-  height: 500px;
-}
-
 #event-single .event-single .event-details-wrap .event-detail-content #Contact .event-form input, #event-single .event-single .event-details-wrap .event-detail-content #Contact .event-form textarea {
   background: transparent;
   width: 100%;
@@ -1742,6 +1735,20 @@ body {
   color: white !important;
 }
 
+.contact-map {
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+
+.contact-map iframe {
+  width: 100%;
+  height: 500px;
+}
+
+.contact-us-map iframe {
+  height: 573px;
+}
+
 #donate .donate-header h2 {
   margin-bottom: 50px;
   text-align: center;
@@ -1766,6 +1773,232 @@ form .form-btn button {
   padding: 6px 15px;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+}
+
+#volunteer {
+  padding-bottom: 0px;
+}
+
+#volunteer .volunteer .volunteer-img {
+  padding: 30px;
+}
+
+#volunteer .volunteer .volunteer-img img {
+  max-width: 100%;
+}
+
+#volunteer .volunteer .volunteer-contact-form {
+  max-width: 760px;
+  margin: auto;
+  padding: 50px 40px;
+  background: #fff;
+  margin-top: -318px;
+  position: relative;
+  z-index: 1;
+}
+
+#volunteer .volunteer .volunteer-contact-form h2 {
+  margin-top: 0;
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 40px;
+  font-family: "Rubik",sans-serif;
+  color: #062265;
+}
+
+#volunteer .volunteer .volunteer-contact-form::before {
+  position: absolute;
+  left: -7px;
+  bottom: -8px;
+  width: 102%;
+  height: 47%;
+  content: "";
+  background: #fbe19f;
+  z-index: -1;
+}
+
+#volunteer .volunteer .volunteer-contact-form::after {
+  position: absolute;
+  left: 0px;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background: #fff;
+  z-index: -1;
+}
+
+#contact-us .contact-us-form {
+  margin-bottom: 60px;
+  padding: 60px 65px 30px;
+  border-radius: 5px;
+}
+
+#contact-us .contact-us-form h2 {
+  font-size: 1.875rem;
+  font-weight: 500;
+  margin: 0 0 1em;
+  text-align: center;
+  font-family: 'Rubik', sans-serif;
+  color: #062265;
+}
+
+.info-item {
+  padding: 50px 40px;
+  margin-bottom: 30px;
+}
+
+.info-item h2 {
+  font-size: 24px;
+  color: #242f6c;
+  font-weight: 500;
+  margin-top: 0;
+  margin-bottom: 25px;
+  font-family: 'Rubik', sans-serif;
+}
+
+.info-item .info-wrap .info-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 90px;
+  height: 90px;
+  line-height: 115px;
+  border-radius: 50%;
+  text-align: center;
+  margin-right: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #242f6c;
+}
+
+.info-item .info-wrap .info-icon i {
+  font-size: 40px;
+  line-height: 90px;
+}
+
+.info-item .info-wrap .contact-address {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#7fedeb), to(#7fd7ea));
+  background-image: linear-gradient(#7fedeb, #7fd7ea);
+}
+
+.info-item .info-wrap .contact-mail {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ffd3b8), to(#ffc0c6));
+  background-image: linear-gradient(#ffd3b8, #ffc0c6);
+}
+
+.info-item .info-wrap .contact-phone {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#e1b3fe), to(#b5b3f9));
+  background-image: linear-gradient(#e1b3fe, #b5b3f9);
+}
+
+.info-item .info-wrap .info-text span {
+  color: #666666;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+#my-posts .post {
+  margin-bottom: 40px;
+  padding: 30px;
+  border: 1px solid #ebebeb;
+}
+
+#my-posts .post .post-info {
+  list-style: none;
+  overflow: hidden;
+  margin-bottom: 25px;
+  padding-top: 35px;
+}
+
+#my-posts .post .post-info .post-info-user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#my-posts .post .post-info .post-info-user .user-img {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+
+#my-posts .post .post-info .post-info-user .user-img img {
+  border-radius: 50%;
+  max-width: 100%;
+}
+
+#my-posts .post .post-info .post-info-user .user-name a {
+  text-decoration: none;
+  color: #777;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+#my-posts .post .post-info .post-info-user .user-name a:hover {
+  color: #f7c33f;
+}
+
+#my-posts .post .post-content h3 {
+  font-family: 'Rubik', sans-serif;
+  color: #062265;
+  font-size: 1.75rem;
+  line-height: 1.2em;
+  font-weight: 600;
+  margin: -0.27em 0 0.7em;
+}
+
+#my-posts .post .post-content p {
+  color: #777777;
+  line-height: 1.6em;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 1.5em;
+}
+
+#my-posts .post .owl-nav .owl-prev, #my-posts .post .owl-nav .owl-next {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background: #fff;
+  color: #666;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  padding: 0;
+  margin: 0;
+  border-radius: 50%;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+#my-posts .post .owl-nav .owl-prev span, #my-posts .post .owl-nav .owl-next span {
+  font-size: 20px;
+}
+
+#my-posts .post .owl-nav .owl-prev:hover, #my-posts .post .owl-nav .owl-next:hover {
+  background: #f7c33f;
+  color: white;
+}
+
+#my-posts .post .owl-nav .owl-prev {
+  left: 15px;
+}
+
+#my-posts .post .owl-nav .owl-next {
+  right: 15px;
 }
 
 @media (max-width: 991px) {
@@ -1806,6 +2039,10 @@ form .form-btn button {
     width: 105%;
     height: 56%;
   }
+  .volunteer-contact-form {
+    max-width: 635px !important;
+    margin-top: 0px !important;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1829,6 +2066,20 @@ form .form-btn button {
     max-width: 340px !important;
     font-size: 34px !important;
     line-height: 45px !important;
+  }
+  .volunteer-contact-form {
+    margin-top: 0px !important;
+    padding: 14px 16px !important;
+  }
+  .volunteer-contact-form h2 {
+    font-size: 23px !important;
+  }
+  .contact-us-form {
+    padding: 40px 35px !important;
+  }
+  .contact-us-map {
+    height: 500px !important;
+    overflow: hidden;
   }
 }
 

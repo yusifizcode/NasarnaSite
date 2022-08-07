@@ -159,13 +159,13 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="breadcrumb-wrap">
-                            <h2>Become a Volunteer</h2>
+                            <h2>Yusif Osmanov</h2>
                             <ul class="breadcrumb-list">
                                 <li class="breadcrumb-list-item">
                                     <a href="index.html">Home</a>
                                 </li>
                                 <li class="breadcrumb-list-item">
-                                    <a href="cause.html">Become a Volunteer</a>
+                                    <a href="cause.html">My Profile</a>
                                 </li>
                             </ul>
                         </div>
@@ -176,152 +176,86 @@
         </section>
         <!-- End of Breadcrumb -->
 
-        <!-- Start of Become a Volunteer -->
-        <section id="volunteer" class="section-padding">
+        <!-- Start Create a Post -->
+        <section id="create-post" class="py-5">
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-12">
-                        <div class="volunteer d-flex flex-column align-items-center">
-                            <div class="shadow">
-                                <div class="volunteer-img">
-                                    <img src="./assets/images/volunteer.jpg" alt="">
-                                </div>
-                            </div>
-                            <div class="volunteer-contact">
-                                <div class="volunteer-contact-form">
-                                    <h2>Become a Volunteer</h2>
-                                    <form action="" method="post" >
-                                        <form method="post" class="contact-validation-active" id="contact-form" novalidate="novalidate">
-                                            <div class="row justify-content-center text-center">
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-12 mb-3 form-group">
-                                                    <input type="text" class="form-control" name="name" id="name" placeholder="First Name">
+                    <div class="col-lg-8 col-md-10 col-sm-12 text-center">
+                        <div class="donation-details donate p-4">
+                            <h2 class="fs-3 ">Edit a Post for Charity</h2>
+                            <div class="donation-details tab-donation">
+                                <form action="">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-12 form-group">
+                                            <input type="text" class="form-control" placeholder="Title">
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-12 form-group">
+                                            <input type="number" class="form-control" placeholder="Amount Needed">
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-12 form-group">
+                                            <div class="row">
+                                                <div class="col-lg-6 col-md-6 col-sm-6 col-12 form-group">
+                                                    <div class="dropdown">
+                                                        <button class="btn btn-warning dropdown-toggle w-100 text-white"
+                                                            type="button" id="dropdownMenuButton1"
+                                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                                            Tags
+                                                        </button>
+                                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                            <li><a class="dropdown-item" href="#">Action</a></li>
+                                                            <li><a class="dropdown-item" href="#">Another action</a>
+                                                            </li>
+                                                            <li><a class="dropdown-item" href="#">Something else
+                                                                    here</a></li>
+                                                        </ul>
+                                                    </div>
                                                 </div>
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-12 mb-3 form-group">
-                                                    <input type="email" class="form-control" name="email" id="email" placeholder="Email">
-                                                </div>
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-12 mb-3 form-group">
-                                                    <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
-                                                </div>
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-12 mb-3 mt-2">
-                                                    <input id="file" type="file" class="form-control" name="file">
-                                                </div>
-                                                <div class="col-lg-12 col-12 form-group">
-                                                    <textarea class="form-control" name="note" id="note" rows="6" placeholder="Description..."></textarea>
-                                                </div>
-                                                <div class="form-btn col-lg-12 col-12">
-                                                    <button type="submit" class="theme-btn submit-btn">Send Message</button>
+                                                <div class="col-lg-6 col-md-6 col-sm-6 col-12 form-group">
+                                                    <div class="dropdown">
+                                                        <button class="btn btn-warning dropdown-toggle w-100 text-white"
+                                                            type="button" id="dropdownMenuButton1"
+                                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                                            Category
+                                                        </button>
+                                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                            <li><a class="dropdown-item" href="#">Action</a></li>
+                                                            <li><a class="dropdown-item" href="#">Another action</a>
+                                                            </li>
+                                                            <li><a class="dropdown-item" href="#">Something else
+                                                                    here</a></li>
+                                                        </ul>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </form>
-                                    </form>
-                                </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-12 form-group">
+                                            <input type="text" class="form-control" name="Adress" id="Adress"
+                                                placeholder="Adress">
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-12 form-group">
+                                            <input type="file" class="form-control border-0" multiple
+                                                placeholder="File">
+                                        </div>
+                                        <div class="col-lg-12 col-12 form-group">
+                                            <textarea class="form-control" id="note" placeholder="Description"
+                                                rows="6"></textarea>
+                                        </div>
+
+                                        <div class="form-btn">
+                                            <button type="submit">Publish</button>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- Start of Become a Volunteer -->
-
-                <!-- Start of Team -->
-                <section id="team" class="section-padding">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col text-center">
-                                <div class="section-title">
-                                    <span>Meet Our Team</span>
-                                    <h2>Our Expert Volunteer</h2>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-4 col-md-6 col-sm-12 mb-5">
-                                <div class="member-card">
-                                    <div class="member-img">
-                                        <img src="./assets/images/team/team-1.jpg" alt="">
-                                    </div>
-                                    <div class="member-info shadow-sm">
-                                        <div class="member">
-                                            <h2>Robert Honey</h2>
-                                            <span>Volunteer</span>
-                                            <ul class="member-social-list">
-                                                <li class="member-social-list-item">
-                                                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                                                </li>
-                                                <li class="member-social-list-item">
-                                                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                                                </li>
-                                                <li class="member-social-list-item">
-                                                    <a href="#"><i class="fa-solid fa-envelope"></i></a>
-                                                </li>
-                                                <li class="member-social-list-item">
-                                                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-12 mb-5">
-                                <div class="member-card">
-                                    <div class="member-img">
-                                        <img src="./assets/images/team/team-2.jpg" alt="">
-                                    </div>
-                                    <div class="member-info shadow-sm">
-                                        <div class="member">
-                                            <h2>Robert Honey</h2>
-                                            <span>Volunteer</span>
-                                            <ul class="member-social-list">
-                                                <li class="member-social-list-item">
-                                                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                                                </li>
-                                                <li class="member-social-list-item">
-                                                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                                                </li>
-                                                <li class="member-social-list-item">
-                                                    <a href="#"><i class="fa-solid fa-envelope"></i></a>
-                                                </li>
-                                                <li class="member-social-list-item">
-                                                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-12 mb-5">
-                                <div class="member-card">
-                                    <div class="member-img">
-                                        <img src="./assets/images/team/team-3.jpg" alt="">
-                                    </div>
-                                    <div class="member-info shadow-sm">
-                                        <div class="member">
-                                            <h2>Robert Honey</h2>
-                                            <span>Volunteer</span>
-                                            <ul class="member-social-list">
-                                                <li class="member-social-list-item">
-                                                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                                                </li>
-                                                <li class="member-social-list-item">
-                                                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                                                </li>
-                                                <li class="member-social-list-item">
-                                                    <a href="#"><i class="fa-solid fa-envelope"></i></a>
-                                                </li>
-                                                <li class="member-social-list-item">
-                                                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <!-- End of Team -->
+        <!-- End Create a Post -->
 
 
+        
     </main>
     <!-- End of Main -->
 
@@ -493,7 +427,7 @@
     <script type="text/javascript">
         $('.owl-carousel').owlCarousel({
             loop: true,
-            margin: 30,
+            margin: 0,
             responsiveClass: true,
             responsive: {
                 0: {
@@ -502,14 +436,14 @@
                     nav: false,
                 },
                 550: {
-                    items: 2,
+                    items: 1,
                     center: false,
                     margin: 10,
                     dots: false,
                     nav: false
                 },
                 992: {
-                    items: 3,
+                    items: 1,
                     nav: true,
                     dots: false,
                     loop: true
