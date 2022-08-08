@@ -2206,6 +2206,16 @@ form .form-btn button {
   color: #000;
 }
 
+#error .error-img img {
+  max-width: 100%;
+}
+
+#error .error-message h3 {
+  font-size: 1.25rem;
+  font-family: "Rubik",sans-serif;
+  color: #062265;
+}
+
 @media (max-width: 991px) {
   #hero .site-title h2 {
     font-size: 2.8125rem !important;

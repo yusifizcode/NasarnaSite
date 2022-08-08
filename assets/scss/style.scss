@@ -2245,6 +2245,25 @@ form{
 }
 
 
+// Start Erorr
+
+#error{
+	.error-img{
+		img{
+			max-width: 100%;
+		}
+	}
+
+	.error-message{
+		h3{
+			font-size: 1.25rem;
+			font-family: "Rubik",sans-serif;
+			color: $primary-blue;
+		}
+	}
+}
+
+
 @media (max-width:991px) {
 
 	#hero {
