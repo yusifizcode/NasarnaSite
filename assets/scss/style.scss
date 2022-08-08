@@ -1,4 +1,5 @@
-$primary-color: #f7c33f;
+$primary-yellow: #f7c33f;
+$primary-blue: #062265;
 
 * {
 	box-sizing: border-box;
@@ -80,7 +81,7 @@ body {
 				left: 0;
 				width: 100%;
 				height: 100%;
-				background-color: $primary-color;
+				background-color: $primary-yellow;
 				animation: foldCubeAngle 2.4s infinite linear both;
 				transform-origin: 100% 100%;
 			}
@@ -120,7 +121,7 @@ body {
 
 	.navbar-toggler {
 		border: none !important;
-		background-color: $primary-color;
+		background-color: $primary-yellow;
 
 		&:focus {
 			box-shadow: none !important;
@@ -135,7 +136,7 @@ body {
 
 		&:hover {
 			.nav-link {
-				color: $primary-color  !important;
+				color: $primary-yellow  !important;
 			}
 		}
 	}
@@ -171,7 +172,7 @@ body {
 
 				&:hover{
 					.small-nav-link{
-						color: $primary-color !important;
+						color: $primary-yellow !important;
 					}
 				}
 
@@ -199,7 +200,7 @@ body {
 		padding-top: 5px;
 
 		.search-toggle-btn {
-			background: transparent;
+			background: white;
 			padding: 0;
 			border: 0;
 			outline: 0;
@@ -218,6 +219,7 @@ body {
 
 			input {
 				border: none !important;
+				border-radius: 0 !important;
 				outline: none !important;
 				padding: 15px 20px;
 				font-size: 14px;
@@ -238,8 +240,36 @@ body {
 			opacity: 1;
 			visibility: visible;
 			right: 0;
+			z-index: 99;
 		}
 	}
+}
+
+.header-style{
+	position: relative !important;
+}
+
+.site-header{
+	position: absolute;
+    z-index: 120;
+    width: 100%;
+    background: rgba(255, 255, 255, .05);
+}
+
+.sticky-header{
+	width: 100%;
+	position: fixed;
+	left: 0;
+	z-index: 9999;
+	top: -200px;
+	opacity: 0;
+	transition: all .7s;
+}
+
+.sticky-on{
+	opacity: 1;
+    top: 0;
+    background: #fff !important;
 }
 
 @media (max-width: 450px) {
@@ -255,11 +285,10 @@ body {
 }
 
 #hero {
-	padding-top: 150px;
 
 	.site-title {
 		h2 {
-			color: #062265;
+			color: $primary-blue;
 			font-size: 60px;
 			margin: 0 0 0.45em 0.45em;
 			font-weight: 500;
@@ -267,7 +296,7 @@ body {
 			font-family: "Rubik", sans-serif;
 
 			span {
-				color: $primary-color;
+				color: $primary-yellow;
 				font-size: 60px;
 				font-weight: 500;
 				line-height: 1.1;
@@ -301,7 +330,7 @@ body {
 
 	a {
 		padding: 13px 38px;
-		color: #062265;
+		color: $primary-blue;
 		font-weight: 600;
 		transition: all 0.4s;
 		font-family: "Rubik", sans-serif;
@@ -312,8 +341,8 @@ body {
 
 		&:nth-child(2) {
 			&:hover {
-				background-color: $primary-color;
-				border: 1px solid $primary-color  !important;
+				background-color: $primary-yellow;
+				border: 1px solid $primary-yellow  !important;
 			}
 		}
 	}
@@ -330,7 +359,7 @@ body {
 	span {
 		font-size: 18px;
 		font-weight: 400;
-		color: $primary-color;
+		color: $primary-yellow;
 		display: block;
 		margin-bottom: 10px;
 		font-family: "Rubik", sans-serif;
@@ -344,7 +373,7 @@ body {
 		position: relative;
 		line-height: 50px;
 		font-family: "Rubik", sans-serif;
-		color: #062265;
+		color: $primary-blue;
 	}
 }
 
@@ -365,7 +394,7 @@ body {
 				font-weight: 500;
 				margin-bottom: 20px;
 				font-family: "Rubik", sans-serif;
-				color: #062265;
+				color: $primary-blue;
 			}
 
 			p {
@@ -420,7 +449,7 @@ body {
 					margin-top: 0;
 					font-weight: 600;
 					font-family: "Rubik", sans-serif;
-					color: #062265;
+					color: $primary-blue;
 
 				}
 			}
@@ -453,7 +482,7 @@ body {
 
 		button {
 			background: transparent;
-			color: $primary-color;
+			color: $primary-yellow;
 			font-size: 14px;
 			margin: 5px;
 			padding: 4px 7px;
@@ -469,7 +498,7 @@ body {
 			line-height: 40px;
 			text-align: center;
 			transition: all .3s;
-			border: 1px solid $primary-color;
+			border: 1px solid $primary-yellow;
 
 			&:nth-child(2) {
 				right: -70px;
@@ -477,7 +506,7 @@ body {
 			}
 
 			&:hover {
-				background: $primary-color;
+				background: $primary-yellow;
 				color: white;
 			}
 		}
@@ -503,7 +532,7 @@ body {
 	}
 
 	.fund-raise h2 {
-		color: $primary-color;
+		color: $primary-yellow;
 	}
 
 	.volunteers h2 {
@@ -561,7 +590,7 @@ body {
 					font-weight: 500;
 					margin-top: 0;
 					font-family: "Rubik", sans-serif;
-					color: #062265;
+					color: $primary-blue;
 				}
 
 				span {
@@ -583,7 +612,7 @@ body {
 
 						a {
 							text-decoration: none;
-							color: #062265;
+							color: $primary-blue;
 						}
 					}
 				}
@@ -592,7 +621,7 @@ body {
 
 		&:hover {
 			.member-info {
-				background-color: $primary-color;
+				background-color: $primary-yellow;
 				box-shadow: none !important;
 
 				.member {
@@ -625,16 +654,16 @@ body {
 			line-height: 60px;
 			margin: 0;
 			font-family: "Rubik", sans-serif;
-			color: #062265;
+			color: $primary-blue;
 		}
 
 		a {
-			background-color: $primary-color;
+			background-color: $primary-yellow;
 			display: flex;
 			align-items: center;
 			padding: 15px 20px;
 			border-radius: 5px;
-			color: #062265;
+			color: $primary-blue;
 			font-weight: 600;
 			text-decoration: none;
 
@@ -691,7 +720,7 @@ body {
 				font-weight: 600;
 				margin-bottom: 15px;
 				font-family: "Rubik", sans-serif;
-				color: #062265;
+				color: $primary-blue;
 			}
 		}
 	}
@@ -797,11 +826,11 @@ body {
 
 		&:hover {
 			.blog-content {
-				background: $primary-color;
+				background: $primary-yellow;
 
 				h2 {
 					&::before {
-						background: #062265;
+						background: $primary-blue;
 					}
 				}
 			}
@@ -833,7 +862,7 @@ body {
 				padding-left: 20px;
 				position: relative;
 				font-family: "Rubik", sans-serif;
-				color: #062265;
+				color: $primary-blue;
 
 				&::before {
 					position: absolute;
@@ -842,7 +871,7 @@ body {
 					top: 7px;
 					width: 10px;
 					height: 10px;
-					background: $primary-color;
+					background: $primary-yellow;
 					border-radius: 50%;
 					transition: all .3s;
 
@@ -856,7 +885,7 @@ body {
 // Start Subscribe
 
 #subscribe {
-	background: #062265;
+	background: $primary-blue;
 	text-align: center;
 	padding: 100px 0;
 
@@ -885,7 +914,7 @@ body {
 			}
 
 			button {
-				background: $primary-color;
+				background: $primary-yellow;
 				width: 150px;
 				height: 45px;
 				font-weight: 600;
@@ -904,7 +933,7 @@ body {
 
 
 #footer {
-	background: #062265;
+	background: $primary-blue;
 	position: relative;
 	font-size: 15px;
 	overflow: hidden;
@@ -1095,10 +1124,10 @@ body {
 				}
 
 				&:nth-child(2) {
-					color: $primary-color;
+					color: $primary-yellow;
 
 					a {
-						color: $primary-color;
+						color: $primary-yellow;
 					}
 				}
 			}
@@ -1183,7 +1212,7 @@ body {
 				top: -30px;
 				width: 108%;
 				height: 56%;
-				background: $primary-color;
+				background: $primary-yellow;
 				z-index: -1;
 			}
 		}
@@ -1197,10 +1226,10 @@ body {
 			line-height: 55px;
 			margin-top: 45px;
 			font-family: "Rubik", sans-serif;
-			color: #062265;
+			color: $primary-blue;
 
 			span {
-				color: $primary-color;
+				color: $primary-yellow;
 
 			}
 		}
@@ -1261,7 +1290,7 @@ body {
 			position: relative;
 			text-transform: capitalize;
 			font-family: 'Rubik', sans-serif;
-			color: #062265;
+			color: $primary-blue;
 		}
 
 		.sidebar-form {
@@ -1308,7 +1337,7 @@ body {
 				&:hover{
 					a{
 						transition: all .3s;
-						color: $primary-color !important;
+						color: $primary-yellow !important;
 					}
 				}
 
@@ -1352,7 +1381,7 @@ body {
 					&:hover{
 						a{
 							transition: all .3s;
-							color: $primary-color !important;
+							color: $primary-yellow !important;
 						}
 					}
 
@@ -1393,7 +1422,7 @@ body {
 				margin: 0 8px 8px 0;
 				transition: all .5s;
 				&:hover{
-					background: $primary-color !important;
+					background: $primary-yellow !important;
 					a{
 						color: white !important;
 					}
@@ -1473,100 +1502,101 @@ body {
 
 
 				}
+			}
+		}
+	}
+}
 
-				#Comments{
-					.comments-title{
-						font-size: 30px;
+
+#Comments{
+	.comments-title{
+		font-size: 30px;
+		font-weight: 600;
+		margin: 0 0 1.5em;
+		font-family: 'Rubik', sans-serif;
+		color: #242f6c;
+	}
+
+	.comment-list{
+		list-style: none;
+		padding-left: 0;
+
+		.comment{				
+			border: 1px solid #ebebeb;
+			padding: 30px;
+			margin-bottom: 20px;
+
+			.comment-img{
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				img{
+					border-radius: 50%;
+					max-width: 100%;
+				}
+			}
+
+			.comment-wrap{
+				padding-left: 20px;
+				.comment-header{
+					h4{
+						font-size: 1rem;
 						font-weight: 600;
-						margin: 0 0 1.5em;
+						margin: 0 0 1em;
 						font-family: 'Rubik', sans-serif;
-						color: #242f6c;
-					}
+						color: $primary-blue;
 
-					.comment-list{
-						list-style: none;
-						padding-left: 0;
-
-						.comment{				
-						    border: 1px solid #ebebeb;
-							padding: 30px;
-							margin-bottom: 20px;
-
-							.comment-img{
-								border-radius: 50%;
-								display: flex;
-								align-items: center;
-								img{
-									border-radius: 50%;
-									max-width: 100%;
-								}
-							}
-
-							.comment-wrap{
-								padding-left: 20px;
-								.comment-header{
-									h4{
-										font-size: 1rem;
-										font-weight: 600;
-										margin: 0 0 1em;
-										font-family: 'Rubik', sans-serif;
-										color: #062265;
-
-										.comment-date	{
-											text-transform: none;
-											display: block;
-											font-size: 0.875rem;
-											color: #666;
-											margin-top: 8px;
-										
-										}
-									}
-								}
-							}
-						}
-					}
-
-					.comment-respond{
-						margin-top: 70px;
-
-						h3{
-							font-size: 30px;
-							font-weight: 500;
-							margin: 0 0 1.5em;
-							color: #283a5e;
-							font-family: 'Rubik', sans-serif;
-						}
-
-						.comment-form{
-							textarea{
-								padding: 15px;
-
-								background-color: #f8f8f8;
-								width: 100%;
-								border: 1px solid #f8f8f8;
-								margin-bottom: 15px;
-								outline: 0;
-								box-shadow: none;
-								transition: all 0.3s;
-							}
-
-							button{
-								max-width: 120px;
-								background: #f7c33f;
-								color: #fff;
-								font-weight: 500;
-								margin-bottom: 0;
-								border: 0;
-								border-radius: 50px;
-								outline: 0;
-								width: 100%;
-								height: 50px;
-								padding: 6px 15px;
-								transition: all 0.3s;
-							}
+						.comment-date	{
+							text-transform: none;
+							display: block;
+							font-size: 0.875rem;
+							color: #666;
+							margin-top: 8px;
+						
 						}
 					}
 				}
+			}
+		}
+	}
+
+	.comment-respond{
+		margin-top: 70px;
+
+		h3{
+			font-size: 30px;
+			font-weight: 500;
+			margin: 0 0 1.5em;
+			color: #283a5e;
+			font-family: 'Rubik', sans-serif;
+		}
+
+		.comment-form{
+			textarea{
+				padding: 15px;
+
+				background-color: #f8f8f8;
+				width: 100%;
+				border: 1px solid #f8f8f8;
+				margin-bottom: 15px;
+				outline: 0;
+				box-shadow: none;
+				transition: all 0.3s;
+			}
+
+			button{
+				max-width: 120px;
+				background: #f7c33f;
+				color: #fff;
+				font-weight: 500;
+				margin-bottom: 0;
+				border: 0;
+				border-radius: 50px;
+				outline: 0;
+				width: 100%;
+				height: 50px;
+				padding: 6px 15px;
+				transition: all 0.3s;
 			}
 		}
 	}
@@ -1582,7 +1612,7 @@ body {
 		margin-bottom: 30px;
 		margin-top: 0;
 		font-family: 'Rubik', sans-serif;
-		color: #062265;
+		color: $primary-blue;
 	}
 
 	.tab-donation{
@@ -1621,7 +1651,7 @@ body {
 			margin-top: 0;
 			font-weight: 600;
 			font-family: 'Rubik', sans-serif;
-			color: #062265;
+			color: $primary-blue;
 		}
 
 		.case-text-content{
@@ -1635,7 +1665,7 @@ body {
 				font-weight: 500;
 				margin-bottom: 20px;
 				font-family: 'Rubik', sans-serif;
-				color: #062265;
+				color: $primary-blue;
 			}
 
 			.case-bottom-list{
@@ -1681,7 +1711,7 @@ body {
 			h2{
 				margin-bottom: 30px;
 				font-family: 'Rubik', sans-serif;
-				color: #062265;
+				color: $primary-blue;
 			}
 
 			p{
@@ -1799,7 +1829,7 @@ body {
 			font-weight: 500;
 			margin-top: 0;
 			font-family: 'Rubik', sans-serif;
-			color: #062265;
+			color: $primary-blue;
 		}
 	}
 }
@@ -1849,7 +1879,7 @@ form{
 				text-align: center;
 				margin-bottom: 40px;
 				font-family: "Rubik",sans-serif;
-				color: #062265;
+				color: $primary-blue;
 			}
 
 			&::before{
@@ -1902,7 +1932,7 @@ form{
 			margin: 0 0 1em;
 			text-align: center;
 			font-family: 'Rubik', sans-serif;
-			color: #062265;
+			color: $primary-blue;
 		}
 	}
 }
@@ -1962,102 +1992,258 @@ form{
 
 // Start Profile
 
-#my-posts{
-	.post{
-		margin-bottom: 40px;
-		padding: 30px;
-		border: 1px solid #ebebeb;
 
-		.post-info{
-			list-style: none;
-    		overflow: hidden;
-    		margin-bottom: 25px;
-    		padding-top: 35px;
+.post{
+	margin-bottom: 40px;
+	padding: 30px;
+	border: 1px solid #ebebeb;
 
-			.post-info-user{
-				display: flex;
-				align-items: center;
-				.user-img{
-					border-radius: 50%;
-					width: 50px;
-					height: 50px;
-					img{
-						border-radius: 50%;
-						max-width: 100%;
-					}
-				}
+	.post-info{
+		list-style: none;
+		overflow: hidden;
+		margin-bottom: 25px;
+		padding-top: 35px;
 
-				.user-name{
-					a{
-						text-decoration: none;
-						color: #777;
-						transition: all .3s;
-
-						&:hover{
-							color: $primary-color;
-						}
-					}
-				}
-			}
-		}
-
-		.post-content{
-			h3{
-				font-family: 'Rubik', sans-serif;
-    			color: #062265;
-				font-size: 1.75rem;
-				line-height: 1.2em;
-				font-weight: 600;
-				margin: -0.27em 0 0.7em;
-			}
-
-			p{
-				color: #777777;
-				line-height: 1.6em;
-				font-size: 16px;
-				font-weight: 400;
-				margin-bottom: 1.5em;
-			}
-		}
-
-		.owl-nav{
-			.owl-prev,.owl-next{
-				position: absolute;
-    			top: 50%;
-				transform: translateY(-50%);
-				background: #fff;
-				color: #666;
+		.post-info-user{
+			display: flex;
+			align-items: center;
+			.user-img{
+				border-radius: 50%;
 				width: 50px;
 				height: 50px;
-				line-height: 50px;
-				padding: 0;
-				margin: 0;
-				border-radius: 50%;
-				transition: all 0.3s;
-				display: inline-block;
-				cursor: pointer;
-				transition: all .3s;
-				span{
-					font-size: 20px;
-				}
-
-				&:hover{
-					background: $primary-color;
-					color: white;
+				img{
+					border-radius: 50%;
+					max-width: 100%;
 				}
 			}
 
-			.owl-prev{
-				left: 15px;
+			.user-name{
+				a{
+					text-decoration: none;
+					color: #777;
+					transition: all .3s;
+
+					&:hover{
+						color: $primary-yellow;
+					}
+				}
+			}
+		}
+	}
+
+	.post-content{
+		h3{
+			font-family: 'Rubik', sans-serif;
+			color: $primary-blue;
+			font-size: 1.75rem;
+			line-height: 1.2em;
+			font-weight: 600;
+			margin: -0.27em 0 0.7em;
+		}
+
+		p{
+			color: #777777;
+			line-height: 1.6em;
+			font-size: 16px;
+			font-weight: 400;
+			margin-bottom: 1.5em;
+		}
+	}
+
+	.owl-nav{
+		.owl-prev,.owl-next{
+			position: absolute !important;
+			top: 50% !important;
+			transform: translateY(-50%) !important;
+			background: #fff !important;
+			color: #666 !important;
+			width: 50px !important;
+			height: 50px !important;
+			line-height: 50px !important;
+			padding: 0 !important;
+			margin: 0 !important;
+			border-radius: 50% !important;
+			transition: all 0.3s !important;
+			display: inline-block !important;
+			cursor: pointer !important;
+			transition: all .3s !important;
+			span{
+				font-size: 20px !important;
 			}
 
-			.owl-next{
-				right: 15px;
+			&:hover{
+				background: $primary-yellow !important;
+				color: white !important;
 			}
 		}
 
+		.owl-prev{
+			left: 15px !important;
+		}
+
+		.owl-next{
+			right: 15px !important;
+		}
+	}
+
+}
+
+
+
+.top-login-register{
+	transition: all .3s;
+	&:hover{
+		color: $primary-yellow !important;
 	}
 }
+
+
+// Start Login and Register
+
+.account-wrapper{
+
+    display: flex;
+    flex-wrap: wrap;
+    background: #fff;
+    margin: auto;
+    border-radius: 10px;
+    overflow: hidden;
+	
+	.account-info{
+		width: 50%;
+		background: $primary-blue;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		min-height: 600px;
+		text-align: center;
+		padding: 50px;
+		.account-info-header{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-bottom: 40px;
+			flex-wrap: wrap;
+			a{
+				text-decoration: none;
+				img{
+					max-width: 100%;
+				}
+			}
+		}
+	}
+
+	.account-img{
+		img{
+			max-width: 100%;
+		}
+	}
+
+	.back-home{
+		max-width: 150px;
+	}
+}
+
+
+.account-form{
+    padding: 70px 85px;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+	.form-title {
+		h2{
+			font-size: 30px;
+			margin-bottom: 10px;
+			font-family: "Rubik",sans-serif;
+			color: $primary-blue;
+		}
+		
+		p{
+			font-size: 15px;
+    		margin-bottom: 40px;
+			color: #777777;
+			line-height: 1.6em;
+			font-weight: 400;
+		}
+	}
+}
+
+.form-style{
+	input{
+		width: 100%;
+		margin-bottom: 15px;
+		padding-left: 20px;
+		height: 60px;
+		border: 1px solid #e5e5e5 !important;
+		border-radius: 2px;
+	}
+}
+
+.account-btn{
+	height: 40px;
+    background: #fff;
+    padding: 0px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: capitalize;
+    font-size: 14px;
+    color: $primary-blue;
+    border: 2px solid #fff;
+    transition: all .4s ease-in-out 0s;
+	text-decoration: none;
+	&:hover{
+		background: transparent;
+		color: #fff;
+	}
+}
+
+
+// Start Pagination
+
+.pagination-wrapper{
+	margin-top: 45px;
+	text-align: center;
+
+	.pg-pagination{
+		display: flex;
+		justify-content: center;
+		overflow: hidden;
+		list-style-type: none;
+		text-align: center;
+		padding-left: 0;
+		margin: 0;
+
+		li{
+			margin-right: 10px;
+			
+			a{
+				background-color: #f5f5f5;
+				width: 35px;
+				height: 35px;
+				line-height: 35px;
+				font-size: 0.9375rem;
+				font-weight: 600;
+				color: #666;
+				border: 0;
+				display: block;
+				border-radius: 5px;
+				text-decoration: none;
+			}
+		}
+
+		li.active{
+			a{
+				background: #f7c33f;
+				border-color: #f7c33f;
+				color: #000;
+			}
+		}
+	}
+}
+
 
 @media (max-width:991px) {
 
@@ -2122,6 +2308,14 @@ form{
 		max-width: 635px !important;
 		margin-top: 0px !important;
 	}
+
+	.account-info{
+		width: 100% !important;
+	}
+
+	.account-form{
+		padding: 70px 35px !important;
+	}
 }
 
 @media (max-width:767px) {
@@ -2168,10 +2362,23 @@ form{
 		height: 500px !important;
 		overflow: hidden;
 	}
+
+	.topbar{
+		text-align: center;
+    	padding: 20px 0;
+
+		.intro-phone,.top-login-register{
+			border: none !important;
+		}
+	}
 }
 
 
 @media (max-width:590px) {
+
+	.post{
+		padding: 15px;
+	}
 
 	.case-text-top{
 		padding: 0 !important;
@@ -2215,6 +2422,14 @@ form{
 		}
 	}
 
+	.contact-intro{
+		div{
+			padding: 8px 6px !important;
+		}
+	}
 
+	.top-login-register{
+		padding: 8px 6px !important;
+	}
 
 }

@@ -302,7 +302,7 @@
 
     // Function for clone an element for sticky menu
     function cloneNavForSticyMenu($ele, $newElmClass) {
-        $ele.addClass('original').clone().insertAfter($ele).addClass($newElmClass).removeClass('original');
+        $ele.addClass('original').clone().insertAfter($ele).addClass($newElmClass).addClass("shadow-sm").removeClass('original');
     }
 
     // clone home style 1 navigation for sticky menu
