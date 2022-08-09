@@ -1942,6 +1942,10 @@ form .form-btn button {
   padding-top: 35px;
 }
 
+.post .post-info .chat-icon {
+  cursor: pointer;
+}
+
 .post .post-info .post-info-user {
   display: -webkit-box;
   display: -ms-flexbox;
