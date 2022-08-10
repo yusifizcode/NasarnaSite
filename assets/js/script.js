@@ -56,46 +56,95 @@
 
 
     /*------------------------------------------
-    = POPUP CHAT
+    = POPUP CHAT From Codepen
     -------------------------------------------*/
+    var element = $('.floating-chat');
+    var myStorage = localStorage;
 
-//     const toggleChatboxBtn = document.querySelector(".js-chatbox-toggle");
-// const chatbox = document.querySelector(".js-chatbox");
-// const chatboxMsgDisplay = document.querySelector(".js-chatbox-display");
-// const chatboxForm = document.querySelector(".js-chatbox-form");
+    if (!myStorage.getItem('chatID')) {
+        myStorage.setItem('chatID', createUUID());
+    }
 
-// // Use to create chat bubble when user submits text
-// // Appends to display
-// const createChatBubble = input => {
-//   const chatSection = document.createElement("p");
-//   chatSection.textContent = input;
-//   chatSection.classList.add("chatbox__display-chat");
+    setTimeout(function () {
+        element.addClass('enter');
+    }, 1000);
 
-//   chatboxMsgDisplay.appendChild(chatSection);
-// };
+    element.click(openElement);
 
-// // Toggle the visibility of the chatbox element when clicked
-// // And change the icon depending on visibility
-// toggleChatboxBtn.addEventListener("click", () => {
-//   chatbox.classList.toggle("chatbox--is-visible");
+    function openElement() {
+        var messages = element.find('.messages');
+        var textInput = element.find('.text-box');
+        element.find('>i').hide();
+        element.addClass('expand');
+        element.find('.chat').addClass('enter');
+        element.find('.contact').addClass('expand');
+        var strLength = textInput.val().length * 2;
+        textInput.keydown(onMetaAndEnter).prop("disabled", false).focus();
+        element.off('click', openElement);
+        element.find('.header button').click(closeElement);
+        element.find('#sendMessage').click(sendNewMessage);
+        messages.scrollTop(messages.prop("scrollHeight"));
+    }
 
-//   if (chatbox.classList.contains("chatbox--is-visible")) {
-//     toggleChatboxBtn.innerHTML = '<i class="fas fa-chevron-down"></i>';
-//   } else {
-//     toggleChatboxBtn.innerHTML = '<i class="fas fa-chevron-up"></i>';
-//   }
-// });
+    function closeElement() {
+        element.find('.chat').removeClass('enter').hide();
+        element.find('>i').show();
+        element.removeClass('expand');
+        element.find('.contact').removeClass('expand');
+        element.find('.header button').off('click', closeElement);
+        element.find('#sendMessage').off('click', sendNewMessage);
+        element.find('.text-box').off('keydown', onMetaAndEnter).prop("disabled", true).blur();
+        setTimeout(function () {
+            element.find('.chat').removeClass('enter').show()
+            element.click(openElement);
+        }, 500);
+    }
 
-// // Form input using method createChatBubble
-// // To append any user message to display
-// chatboxForm.addEventListener("submit", e => {
-//   const chatInput = document.querySelector(".js-chatbox-input").value;
+    function createUUID() {
+        // http://www.ietf.org/rfc/rfc4122.txt
+        var s = [];
+        var hexDigits = "0123456789abcdef";
+        for (var i = 0; i < 36; i++) {
+            s[i] = hexDigits.substr(Math.floor(Math.random() * 0x10), 1);
+        }
+        s[14] = "4"; // bits 12-15 of the time_hi_and_version field to 0010
+        s[19] = hexDigits.substr((s[19] & 0x3) | 0x8, 1); // bits 6-7 of the clock_seq_hi_and_reserved to 01
+        s[8] = s[13] = s[18] = s[23] = "-";
 
-//   createChatBubble(chatInput);
+        var uuid = s.join("");
+        return uuid;
+    }
 
-//   e.preventDefault();
-//   chatboxForm.reset();
-// });
+    function sendNewMessage() {
+        var userInput = $('.text-box');
+        var newMessage = userInput.html().replace(/\<div\>|\<br.*?\>/ig, '\n').replace(/\<\/div\>/g, '').trim()
+            .replace(/\n/g, '<br>');
+
+        if (!newMessage) return;
+
+        var messagesContainer = $('.messages');
+
+        messagesContainer.append([
+            '<li class="self">',
+            newMessage,
+            '</li>'
+        ].join(''));
+
+        // clean out old message
+        userInput.html('');
+        // focus on input
+        userInput.focus();
+
+        messagesContainer.finish().animate({
+            scrollTop: messagesContainer.prop("scrollHeight")
+        }, 250);
+    }
+
+    function onMetaAndEnter(event) {
+        if ((event.metaKey || event.ctrlKey) && event.keyCode == 13) {
+            sendNewMessage();
+        }
+    }
 
 
     /*------------------------------------------

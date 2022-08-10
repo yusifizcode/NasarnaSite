@@ -956,11 +956,24 @@ body {
 #footer .upper-footer .about-widget .about-widget-social-list .about-widget-social-list-item {
   margin-right: 15px !important;
   font-size: 22px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
 }
 
 #footer .upper-footer .about-widget .about-widget-social-list .about-widget-social-list-item a {
   color: white;
   text-decoration: none;
+}
+
+#footer .upper-footer .about-widget .about-widget-social-list .about-widget-social-list-item:hover {
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+#footer .upper-footer .about-widget .about-widget-social-list .about-widget-social-list-item:hover a {
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  color: #f7c33f;
 }
 
 #footer .upper-footer .news-widget {
@@ -1044,6 +1057,12 @@ body {
 .widget-list .widget-list-item a {
   text-decoration: none;
   color: white;
+}
+
+.widget-list .widget-list-item:hover a {
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  color: #f7c33f;
 }
 
 .breadcrumb {
@@ -2221,6 +2240,328 @@ form .form-btn button {
   color: #062265;
 }
 
+.floating-chat {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: white;
+  position: fixed;
+  bottom: 50px;
+  right: 26px;
+  width: 56px;
+  height: 56px;
+  -webkit-transform: translateY(70px);
+          transform: translateY(70px);
+  -webkit-transition: all 250ms ease-out;
+  transition: all 250ms ease-out;
+  border-radius: 50%;
+  opacity: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background: #062265;
+  z-index: 2;
+}
+
+.floating-chat.enter {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  opacity: 0.6;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 2.1px 1.3px rgba(0, 0, 0, 0.044), 0 5.9px 4.2px rgba(0, 0, 0, 0.054), 0 12.6px 9.5px rgba(0, 0, 0, 0.061), 0 25px 20px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2.1px 1.3px rgba(0, 0, 0, 0.044), 0 5.9px 4.2px rgba(0, 0, 0, 0.054), 0 12.6px 9.5px rgba(0, 0, 0, 0.061), 0 25px 20px rgba(0, 0, 0, 0.1);
+}
+
+.floating-chat.enter:hover {
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  opacity: 1;
+}
+
+.floating-chat.expand {
+  width: 328px;
+  max-height: 434px;
+  height: 434px;
+  border-radius: 5px;
+  cursor: auto;
+  opacity: 1;
+}
+
+.floating-chat:focus {
+  outline: 0;
+}
+
+.floating-chat button {
+  background: transparent;
+  border: 0;
+  text-transform: uppercase;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.floating-chat .chat {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  border-radius: 50%;
+  -webkit-transition: all 250ms ease-out;
+  transition: all 250ms ease-out;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  border-top: 1px solid #e3e6eb;
+  border-right: 1px solid #e3e6eb;
+  overflow-y: auto;
+}
+
+.floating-chat .chat.enter {
+  opacity: 1;
+  border-radius: 0;
+  width: auto;
+  height: auto;
+}
+
+.floating-chat .chat .header {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #fff;
+  border-radius: 20px 20px 0 0;
+  padding: 15px;
+  border-bottom: 1px solid #e3e6eb;
+}
+
+.floating-chat .chat .header i {
+  font-size: 16px;
+  color: #222;
+}
+
+.floating-chat .chat .header button {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.floating-chat .chat .title {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
+  padding: 0 5px;
+  color: #000;
+  font-size: 12px;
+}
+
+.floating-chat .chat .messages {
+  padding: 10px;
+  margin: 0;
+  list-style: none;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  background: #f7f9fb;
+}
+
+.floating-chat .chat .messages li {
+  position: relative;
+  clear: both;
+  display: inline-block;
+  padding: 14px;
+  margin: 0 0 20px 0;
+  border-radius: 10px;
+  background-color: #e3e6eb;
+  word-wrap: break-word;
+  max-width: 81%;
+}
+
+.floating-chat .chat .messages li:after {
+  position: absolute;
+  top: 10px;
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 10px solid #e3e6eb;
+}
+
+.floating-chat .chat .messages li.other {
+  -webkit-animation: show-chat-odd 0.15s 1 ease-in;
+          animation: show-chat-odd 0.15s 1 ease-in;
+  float: right;
+  margin-right: 45px;
+  color: #000;
+}
+
+.floating-chat .chat .messages li.other span {
+  position: absolute;
+  right: -45px;
+  width: 25px;
+  height: 25px;
+  border-radius: 25px;
+  background: #fff;
+  text-align: center;
+  line-height: 25px;
+}
+
+.floating-chat .chat .messages li.other:after {
+  border-right: 10px solid transparent;
+  right: -10px;
+}
+
+.floating-chat .chat .messages li.self {
+  -webkit-animation: show-chat-even 0.15s 1 ease-in;
+          animation: show-chat-even 0.15s 1 ease-in;
+  float: left;
+  margin-left: 45px;
+  color: #000;
+}
+
+.floating-chat .chat .messages li.self span {
+  position: absolute;
+  left: -45px;
+  width: 25px;
+  height: 25px;
+  border-radius: 25px;
+  background: #fff;
+  text-align: center;
+  line-height: 25px;
+}
+
+.floating-chat .chat .messages li.self:after {
+  border-left: 10px solid transparent;
+  left: -10px;
+}
+
+@-webkit-keyframes show-chat-even {
+  0% {
+    margin-left: -480px;
+  }
+  100% {
+    margin-left: 0;
+  }
+}
+
+@keyframes show-chat-even {
+  0% {
+    margin-left: -480px;
+  }
+  100% {
+    margin-left: 0;
+  }
+}
+
+@-webkit-keyframes show-chat-odd {
+  0% {
+    margin-right: -480px;
+  }
+  100% {
+    margin-right: 0;
+  }
+}
+
+@keyframes show-chat-odd {
+  0% {
+    margin-right: -480px;
+  }
+  100% {
+    margin-right: 0;
+  }
+}
+
+.floating-chat .chat .chat_list {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #fff;
+  border-radius: 20px 20px 0 0;
+  padding: 15px;
+  border-bottom: 1px solid #e3e6eb;
+}
+
+.floating-chat .chat .chat_list .title {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
+  padding: 0 5px;
+  color: #000;
+  font-size: 12px;
+}
+
+.floating-chat .chat .chat_list i {
+  font-size: 16px;
+  color: #222;
+}
+
+.floating-chat .chat .chat_list button {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.floating-chat .chat .footer {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px;
+  max-height: 90px;
+  background: #fff;
+}
+
+.floating-chat .chat .footer .text-box {
+  border-radius: 3px;
+  min-height: 100%;
+  width: 100%;
+  margin-right: 5px;
+  color: #000;
+  overflow-y: auto;
+  padding: 2px 5px;
+}
+
+.floating-chat .chat .footer [contentEditable="true"]:empty:not(:focus):before {
+  content: attr(data-text);
+}
+
+.floating-chat .chat .footer #sendMessage {
+  background-color: #fff;
+  margin-left: auto;
+  width: 65px;
+  color: #000;
+  font-weight: bold;
+  border-left: 2px solid #f7f9fb;
+  border-radius: 0 0 20px 0;
+}
+
 @media (max-width: 991px) {
   #hero .site-title h2 {
     font-size: 2.8125rem !important;
@@ -2353,6 +2694,9 @@ form .form-btn button {
   }
   .top-login-register {
     padding: 8px 6px !important;
+  }
+  .floating-chat {
+    right: 0 !important;
   }
 }
 /*# sourceMappingURL=style.css.map */
